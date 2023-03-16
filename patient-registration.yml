@@ -1,0 +1,38 @@
+## application configuration properties
+spring:
+  application:
+    name: patient-registration
+  config:
+    import: optional:configserver:http://localhost:8888
+  datasource:
+    url: jdbc:mysql://localhost:3306/patient_registration_db
+    username: Chilufya
+    password: Kenzie@2023
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+  cloud:
+    discovery:
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+##eureka configurations
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+  client:
+    enabled: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+server:
+  port: 8081
