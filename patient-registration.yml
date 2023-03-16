@@ -1,9 +1,5 @@
 ## application configuration properties
 spring:
-  application:
-    name: patient-registration
-  config:
-    import: optional:configserver:http://localhost:8888
   datasource:
     url: jdbc:mysql://localhost:3306/patient_registration_db
     username: Chilufya
